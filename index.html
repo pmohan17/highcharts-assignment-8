@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Poverty Rates in Spanish-Speaking Counties </title>
+
+  <link rel="stylesheet" href="styles/assignment_eight.css">
+
+  <!-- add the Highcharts script elements here -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/sunset.js"></script>
+</head>
+<header>
+    <h1>Poverty Rates in Spanish-Speaking Countries</h1>
+    <p> by Priya Mohan </p>
+</header>
+<body>
+<section>
+<article>
+<p> This page explores the poverty-rates in Spanish-speaking countries in the Americas. The countries that will be examined will be Honduras, the Dominican Republic, Ecuador, El Salvador, and Argentina. These countries were selected because they demonstrated a variety of economic levels.
+</article>
+<article>
+  <div id="container"></div>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+
+    },
+    title: {
+        text: 'Poverty Rates of Spanish-Speaking Countries in 2016'
+    },
+    subtitle: {
+        text: 'Source: worldbank.org'
+    },
+    xAxis: {
+        categories: [
+            'Argentina',
+            'Dominican Republic',
+            'Ecuador',
+            'El Salvador',
+            'Honduras',
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Percentage at Poverty (%)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: '% of Population below $1.90/day ',
+        data: [0.6, 1.6, 3.6, 2.2, 16]
+
+    }, {
+        name: '% of Population below $3.20/day',
+        data: [2.4, 6.2, 9.4, 10.3, 30]
+
+    }, {
+        name: '% of Population below $5.50/day',
+        data: [7.8, 21, 23.9, 30.7, 50.4]
+
+    },
+        ]
+});
+</script>
+</article>
+<article>
+<p>Data from <a href="http://wdi.worldbank.org/table/1.2">World Development Indicators: Poverty Rates at International Poverty Lines</a></p>
+<p> One of the more striking aspects of this data is that Honduras had an extremely higher poverty rate in comparison to the other countries. $1.90 is considered the international income to be considered great poverty. Argentina seems to be doing well off in comparison to the other countries.
+</article>
+<article>
+<div id="container2"></div>
+<script>
+Highcharts.chart('container2', {
+
+    title: {
+        text: 'Percentage of Poverty Over Time, 2008-2017'
+    },
+
+    subtitle: {
+        text: 'Source: worldbank.org/country/honduras'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Percentage of Population in Poverty (%)'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2008
+        }
+    },
+
+    series: [{
+        name: 'Honduras',
+        data: [59.2,	58.8,	60,	61.9,	66.5,	64.5,	62.8,	63.8,	60.9,	64.3]
+    }, {
+        name: 'Dominican Republic',
+        data: [44.2,	42.1,	41.6,	40.4,	41,	41.2,	36.3,	32.3,	30.5,	null]
+    }, {
+        name: 'Ecuador',
+        data: [35.1, 36,	32.8,	28.6,	27.3,	25.6,	22.5,	23.3,	22.9,	21.5]
+    }, {
+        name: 'El Salvador',
+        data: [40, 37.8,	36.5,	40.6,	34.5,	29.6,	31.8,	34.9,	32.7,	29.2]
+    },
+    ],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>
+</article>
+<article>
+<p>Data from <a href="http://databank.worldbank.org/data/reports.aspx?source=2&type=metadata&series=SI.POV.NAHC">Worldbank's World Development Indicators </a></p>
+<p> This material shows the vast difference in poverty percentages, between these countries. Information on Argentina's poverty percentages could not be found, so it was excluded from this graph. However, it is clear that Honduras has a significantly higher poverty percentage than these other countries. Likewise, it appears that the poverty rates are decreasing for the other countries, but has slightly increased for Honduras. </p>
+</article>
+</section>
+</body>
+</html>

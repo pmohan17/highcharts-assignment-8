@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    color: #000;
+    background:	#89cff0;
+    margin: 0;
+    padding: 25px;
+
+}
+section {
+  max-width: 600px;
+  margin: auto;
+
+}
+header {
+  text-align: center;
+  margin: auto;
+}
+
+#container{
+  font-family: sans-serif;
+  color: #000;
+  background:#89cff0;
+  align-content: center;
+  max-width: 600px;
+
+}
+#container2{
+  font-family: sans-serif;
+  color: #000;
+  background:#89cff0;
+  max-width: 600px;
+}
